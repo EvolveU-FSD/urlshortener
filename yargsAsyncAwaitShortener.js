@@ -53,7 +53,7 @@ async function shortenUrl(url, options) {
     return {
         original: url,
         shortened,
-        qr: options.qr ? `https://api.qrserver.com/v1/create-qr-code/?size=${options.qrSize}x${options.qrSize}&data=${encodeURIComponent(data)}` : null,
+        qr: options.qr ? `https://api.qrserver.com/v1/create-qr-code/?size=${options.qrSize}x${options.qrSize}&data=${encodeURIComponent(shortened)}` : null,
         preview: options.preview ? `https://tinyurl.com/preview.php?num=${shortened.split('/').pop()}` : null
     };
 }
